@@ -1,0 +1,10 @@
+{
+  "name": "csv-delta",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Key-based CSV comparison and shareable offline reports",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test tests/*.test.js", "start": "node scripts/serve.js", "build": "node scripts/build.js" }
+}
