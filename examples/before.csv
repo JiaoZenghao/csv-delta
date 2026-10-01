@@ -1,0 +1,6 @@
+sku,region,product,price,stock,updated_at
+P-001,US,Keyboard,79.00,24,2026-09-01
+P-001,EU,Keyboard,89.00,12,2026-09-01
+P-002,US,Mouse,29.00,40,2026-09-01
+P-003,US,Monitor,249.00,8,2026-09-01
+P-004,US,USB cable,9.99,100,2026-09-01

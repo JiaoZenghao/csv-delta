@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare CSV files by composite keys in your browser. Ignore columns, set numeric tolerance, and export a private offline HTML difference report.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>CSV Delta — key-based CSV comparison</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">Δ</span> CSV Delta</a><div class="top-actions"><a href="https://github.com/JiaoZenghao/csv-delta" target="_blank" rel="noopener noreferrer" data-i18n="github">Source on GitHub</a><button id="language" class="language" type="button" aria-label="Switch language">中文</button></div></header>
+<main>
+  <section class="intro"><div><h1 data-i18n="tagline">See what changed. Skip the noise.</h1><p data-i18n="intro">Compare CSV exports by key, not by line. Review every real change and take an offline report with you.</p><p class="privacy" data-i18n="local">Your files stay in this browser. No account, no uploads.</p></div><button id="example" class="primary" data-i18n="example">Try an example</button></section>
+  <section aria-labelledby="files-title" class="workspace">
+    <div class="section-heading"><h2 id="files-title"><span class="step">01</span><span data-i18n="files">Choose your snapshots</span></h2><button id="clear" class="text-button" data-i18n="clear">Clear files</button></div>
+    <div class="files-grid">
+      <div class="file-panel"><div class="file-heading"><h3 data-i18n="old">Before</h3><span data-i18n="oldHint">Your reference CSV</span></div><label class="file-picker" for="old-file"><span data-i18n="choose">Choose CSV</span><input id="old-file" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values"></label><p id="old-name" class="file-name" data-i18n="noFile">No file selected</p></div>
+      <div class="file-panel"><div class="file-heading"><h3 data-i18n="new">After</h3><span data-i18n="newHint">Your updated CSV</span></div><label class="file-picker" for="new-file"><span data-i18n="choose">Choose CSV</span><input id="new-file" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values"></label><p id="new-name" class="file-name" data-i18n="noFile">No file selected</p></div>
+    </div>
+    <div class="file-options"><span data-i18n="limit">UTF-8 · 10 MiB per file · 50,000 rows</span><label for="delimiter"><span data-i18n="delimiter">Delimiter</span><select id="delimiter"><option value="," data-i18n="comma">Comma</option><option value=";" data-i18n="semicolon">Semicolon</option><option value="tab" data-i18n="tab">Tab</option></select></label></div>
+    <p id="message" role="status" aria-live="polite" class="message" hidden></p>
+  </section>
+  <section class="rules-section" aria-labelledby="rules-title"><h2 id="rules-title"><span class="step">02</span><span data-i18n="rules">Set comparison rules</span></h2><p id="ready" class="muted" data-i18n="ready">Choose both files to configure your comparison.</p><div id="rules" hidden><div class="rules-grid"><fieldset><legend data-i18n="keys">Key columns</legend><p data-i18n="keyHint">Pick the columns that uniquely identify a row.</p><div id="keys" class="choices"></div></fieldset><fieldset><legend data-i18n="ignore">Ignore columns</legend><p data-i18n="ignoreHint">Skip timestamps or other expected changes.</p><div id="ignore" class="choices"></div></fieldset><fieldset><legend data-i18n="numeric">Numeric columns</legend><p data-i18n="numericHint">Compare decimal values rather than their formatting.</p><div id="numeric" class="choices"></div></fieldset></div><div class="compare-bar"><div><label class="tolerance-label" for="tolerance"><span data-i18n="tolerance">Absolute tolerance</span><input id="tolerance" type="number" min="0" step="any" value="0" required></label><p class="fine-print" data-i18n="float">Numeric comparisons use floating-point arithmetic, not exact financial decimals.</p></div><button id="compare" class="primary" data-i18n="compare">Compare snapshots</button></div></div></section>
+  <section aria-labelledby="results-title" class="results-section"><div class="section-heading"><h2 id="results-title"><span class="step">03</span><span data-i18n="results">Review the difference</span></h2><button id="export" class="secondary" disabled data-i18n="export">Export HTML report</button></div><div id="empty" class="empty-state"><span class="empty-mark" aria-hidden="true">Δ</span><h3 data-i18n="empty">Nothing here yet.</h3><p data-i18n="emptyHint">Try the example or choose two CSV files to see exactly what changed.</p></div><div id="result-content" hidden><div id="counts" class="counts" aria-live="polite"></div><div id="schema" class="schema" hidden></div><div class="result-toolbar"><div id="filters" class="filters" aria-label="Filter rows"></div><span id="result-total" class="muted"></span></div><div class="table-scroll"><table><thead><tr><th scope="col" data-i18n="status">Status</th><th scope="col" data-i18n="key">Key</th><th scope="col" data-i18n="before">Before</th><th scope="col" data-i18n="after">After</th></tr></thead><tbody id="result-rows"></tbody></table></div><p id="no-matches" class="muted" hidden data-i18n="noMatches">No rows match this filter.</p><div class="pagination"><button id="previous" class="secondary" data-i18n="previous">Previous</button><span id="page-label"></span><button id="next" class="secondary" data-i18n="next">Next</button></div><p class="fine-print" data-i18n="share">The report contains your data. Share it only with people you choose.</p></div></section>
+  <details class="help"><summary data-i18n="help">How comparisons work</summary><p data-i18n="helpText"></p><p data-i18n="helpLimits"></p></details>
+</main>
+<footer><span>CSV Delta · v0.1.0</span><span data-i18n="about">Made for migration checks, configuration tables and price exports.</span></footer>
+</body></html>

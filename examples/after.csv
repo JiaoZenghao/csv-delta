@@ -1,0 +1,6 @@
+region,sku,product,price,stock,updated_at
+US,P-004,USB cable,9.990,100,2026-10-01
+US,P-001,Keyboard,74.00,24,2026-10-01
+EU,P-001,Keyboard,89.00,10,2026-10-01
+US,P-002,Mouse,29.00,40,2026-10-01
+US,P-005,Webcam,59.00,16,2026-10-01
