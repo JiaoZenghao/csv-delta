@@ -14,4 +14,4 @@
 
 Known minor limitation: after skipped blank lines, parser errors can use inconsistent record numbering. This affects locating invalid input, not valid-file comparison results.
 
-Live CI, GitHub Pages and release status are verified separately at publication time.
+Publication verified 2026-10-01: GitHub test workflow succeeded; Pages build and deployment succeeded; public demo rendered and its example compared correctly; v0.1.0 release points to commit 2af71f9. See docs/growth.md for source links and the observed baseline.
