@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible CSV comparison problem
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please use synthetic or redacted data. Never post private exports or credentials."
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and comparison settings
+      description: Include your delimiter, key columns, ignored/numeric columns and tolerance.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal synthetic CSV examples
+      render: text
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and operating system

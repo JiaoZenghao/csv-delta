@@ -1,0 +1,10 @@
+name: Workflow suggestion
+description: Tell us what CSV task you need to complete
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What are you trying to check?
+      description: Describe the task, the current difficulty and the result you need.
+    validations:
+      required: true
