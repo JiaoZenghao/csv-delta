@@ -3,6 +3,7 @@ import {compareCSV} from './compare.js';
 import {createReport} from './report.js';
 import {messages} from './i18n.js';
 import {example} from './example.js';
+import {displayFields} from './view.js';
 
 const $ = id => document.getElementById(id);
 const state = {language:'en',raw:{old:null,new:null},data:{old:null,new:null},versions:{old:0,new:0},result:null,filter:'differences',page:0};
@@ -77,11 +78,11 @@ function compare() {
     $('empty').hidden=true; $('result-content').hidden=false; $('export').disabled=false; renderResult();
   } catch(error) { message(`${t('error')} — ${error.message}`,true); }
 }
-function fieldValues(cell,values,columns,changedClass) {
-  if(!values) { cell.textContent='—'; return; }
-  for(const column of columns) {
+function fieldValues(cell,fields,changedClass) {
+  if(!fields.length) { cell.textContent='—'; return; }
+  for(const field of fields) {
     const value=element('div',undefined,'field-value'+(changedClass?' '+changedClass:''));
-    value.append(element('strong',column),element('span',values[column])); cell.append(value);
+    value.append(element('strong',field.column),element('span',field.value)); cell.append(value);
   }
 }
 function renderResult() {
@@ -106,9 +107,8 @@ function renderResult() {
   for(const record of rows.slice(state.page*100,(state.page+1)*100)) {
     const row=element('tr'); const status=element('td'); status.append(element('span',t(record.type),'status '+record.type));
     const key=element('td',JSON.stringify(record.key),'key-values'), before=element('td'), after=element('td');
-    const columns=record.type==='changed' ? record.changes.map(change=>change.column) : Object.keys(record.new??record.old);
-    fieldValues(before,record.old,columns,record.type==='changed'?'before-change':'');
-    fieldValues(after,record.new,columns,record.type==='changed'?'after-change':'');
+    fieldValues(before,displayFields(record,'old'),record.type==='changed'?'before-change':'');
+    fieldValues(after,displayFields(record,'new'),record.type==='changed'?'after-change':'');
     row.append(status,key,before,after); $('result-rows').append(row);
   }
   $('no-matches').hidden=rows.length!==0;
