@@ -62,3 +62,5 @@ npm run build
 ## 许可证
 
 [MIT](LICENSE)。
+
+本地构建默认不发送访问统计请求，也不加载第三方字体。线上演示可通过部署配置启用 GoatCounter 访问估算，只发送固定页面名称和来源网站域名，不发送 CSV 内容、文件名、查询参数或比较结果；尊重“不跟踪”和 Global Privacy Control。详见 [统计配置](docs/analytics.md)。

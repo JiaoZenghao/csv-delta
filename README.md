@@ -61,7 +61,7 @@ GitHub Actions tests the code and publishes the static site to GitHub Pages.
 - Numeric arithmetic uses JavaScript floating-point values. This is **not suitable for exact decimal financial accounting**, or integer comparisons beyond JavaScript's safe precision. Keep those columns in string mode.
 - No Excel/Parquet import, CLI or automatic key inference in v0.1.0. The initial key suggestion must be reviewed by you.
 
-Files are not uploaded or persisted. There are no analytics scripts or third-party fonts. GitHub may log requests to the hosted page. Reports include your data, including unchanged rows and ignored columns; choose their recipients carefully.
+Files are not uploaded or persisted. Ordinary local builds have no analytics requests or third-party fonts. The hosted demo can enable GoatCounter visit estimates via deployment configuration: it sends a fixed page name and referring website origin, never CSV contents, file names, query strings or comparison results. Do Not Track and Global Privacy Control disable collection. See [analytics setup](docs/analytics.md). GitHub may log requests to the hosted page. Reports include your data, including unchanged rows and ignored columns; choose their recipients carefully.
 
 ## How this fits alongside other tools
 

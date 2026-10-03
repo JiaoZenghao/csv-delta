@@ -19,6 +19,8 @@ jobs:
           package-manager-cache: false
       - run: npm test
       - run: npm run build
+        env:
+          GOATCOUNTER_SITE: ${{ vars.GOATCOUNTER_SITE }}
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
