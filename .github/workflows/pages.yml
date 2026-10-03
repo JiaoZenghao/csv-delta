@@ -20,7 +20,7 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          GOATCOUNTER_SITE: ${{ vars.GOATCOUNTER_SITE }}
+          GOATCOUNTER_SITE: ${{ vars.GOATCOUNTER_SITE || 'https://jiaozenghao.goatcounter.com' }}
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

@@ -1,9 +1,9 @@
 # Visit analytics
 
-Status: integration prepared, not enabled. Waiting for a user-owned GoatCounter site. Historical visits cannot be recovered.
+Site configured: https://jiaozenghao.goatcounter.com on 2026-10-03. Deployment and first-visit verification pending. Historical visits cannot be recovered.
 
 1. Create a free site at https://www.goatcounter.com/signup and complete account/terms confirmation yourself.
-2. In GitHub repository Settings → Secrets and variables → Actions → Variables, set `GOATCOUNTER_SITE` to your site origin, e.g. `https://your-code.goatcounter.com`. This is a public site identifier, not an API key.
+2. In GitHub repository Settings → Secrets and variables → Actions → Variables, optionally set `GOATCOUNTER_SITE` to override the configured site origin, e.g. `https://your-code.goatcounter.com`. This is a public site identifier, not an API key.
 3. Run the Deploy demo workflow. Verify a real demo visit appears in the GoatCounter dashboard before marking collection active. Keep the dashboard private; no public visitor counter is required.
 
 Only the canonical HTTPS Pages demo counts. Localhost, file reports and unconfigured builds make no analytics requests. The integration uses a project-owned script and GoatCounter's documented image endpoint; no third-party script can read the CSV workspace. Only fixed path/title, origin-only referrer and a cache buster are sent. Queries, fragments, file names and comparison state are excluded. Network requests necessarily expose IP and User-Agent to GoatCounter. DNT and Global Privacy Control opt out. CSP allows only the configured site's /count image endpoint; connect-src remains none.
