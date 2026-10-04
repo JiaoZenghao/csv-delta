@@ -1,21 +1,25 @@
 # CSV Delta
 
-**按主键比较 CSV，直接查看真实变化。** 找出新增、删除和修改的记录，导出可直接打开的离线 HTML 报告。
+**更新价格表前，看清涨价、降价、新增和移除的商品。** 按 SKU 和地区比较两份 CSV，导出可直接打开的离线 HTML 报告。也适用于配置表和数据库导出核对。
 
 [在线体验](https://jiaozenghao.github.io/csv-delta/) · [English](README.md) · [反馈问题](https://github.com/JiaoZenghao/csv-delta/issues/new/choose)
 
 无需账号、无需后端。文件仅在当前浏览器处理，不上传、不自动保存。没有运行时第三方依赖。
 
-![CSV Delta 示例](docs/images/preview.png)
+![CSV Delta 示例](docs/images/price-review.svg)
 
 ## 使用方法
 
-1. 点击“体验示例”，或选择旧、新两份 UTF-8 CSV 文件。
+1. 点击“体验价格表示例”，或选择旧、新两份 UTF-8 CSV 文件。
 2. 选择主键列，可用多个列组成复合主键。
 3. 忽略 `updated_at` 等预期变化；按需选择数值列与绝对容差。
 4. 比较、筛选结果，导出完整 HTML 报告。
 
 内置价格表示例以 `sku` + `region` 为主键，忽略更新时间，按数值比较价格。预期结果为：1 行新增、1 行删除、2 行修改、2 行未变。行列重排不会产生差异，`9.99` 和 `9.990` 只有在开启数值比较后才相等。
+
+[下载旧价格表](examples/before.csv) · [下载新价格表](examples/after.csv)
+
+示例中，美国键盘从 79 降至 74，欧洲键盘从 89 涨至 94；新增摄像头，移除显示器。移除表示记录不在新文件中，并不自动证明商品已经下架。
 
 ## 功能
 

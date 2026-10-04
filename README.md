@@ -1,16 +1,16 @@
 # CSV Delta
 
-**Compare CSV exports by key, not by line.** Spot added, removed and modified records, then export a self-contained HTML report.
+**Review price changes before you publish.** Compare CSV exports by SKU and region to find price increases, decreases, added and removed products. Export an offline HTML report. Also works for configuration tables and migration exports.
 
 [Try the browser demo](https://jiaozenghao.github.io/csv-delta/) · [中文说明](README.zh-CN.md) · [Report a problem](https://github.com/JiaoZenghao/csv-delta/issues/new/choose)
 
 No account. No backend. Your files stay in your browser. No runtime dependencies.
 
-![CSV Delta example workspace](docs/images/preview.png)
+![CSV Delta example workspace](docs/images/price-review.svg)
 
-## A migration check in 30 seconds
+## A price-table check in 30 seconds
 
-1. Click **Try an example**, or choose your before and after UTF-8 CSV files.
+1. Click **Try the price-table example**, or choose your before and after UTF-8 CSV files.
 2. Select the columns that identify a row. Use multiple columns for a composite key.
 3. Ignore expected changes such as `updated_at`; opt into numeric comparison for selected columns.
 4. Compare, filter the result, and export an offline HTML report.
@@ -22,6 +22,10 @@ The included price-table example uses `sku` + `region` as its key, ignores `upda
 | 1 | 1 | 2 | 2 |
 
 The same SKU can exist in two regions. Row order and column order do not count as changes. `9.99` and `9.990` match only when numeric comparison is enabled.
+
+[Download before CSV](examples/before.csv) · [Download after CSV](examples/after.csv)
+
+The US keyboard drops from 79 to 74, the EU keyboard rises from 89 to 94, a webcam is added and a monitor is removed. A removed row means it is absent from the new export; it does not establish that a product was delisted.
 
 ## What it handles
 
