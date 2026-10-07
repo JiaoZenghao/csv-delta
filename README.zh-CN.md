@@ -8,6 +8,16 @@
 
 ![CSV Delta 示例](docs/images/price-review.svg)
 
+## 按场景开始
+
+[完整教程：比较 CSV，忽略行顺序和更新时间](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.zh-CN.html)
+
+- [核对价格表](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.zh-CN.html#prices)：SKU＋地区、涨跌价和新增移除。
+- [核对数据库导出](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.zh-CN.html#migration)：保留 ID、忽略导出时间、找状态变化。
+- [核对配置更新](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.zh-CN.html#configuration)：服务＋环境、超时和开关变化。
+
+每个案例包含可下载的旧、新 CSV、设置和预期结果。
+
 ## 使用方法
 
 1. 点击“体验价格表示例”，或选择旧、新两份 UTF-8 CSV 文件。

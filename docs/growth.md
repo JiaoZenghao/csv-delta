@@ -40,3 +40,27 @@ Recommended next experiment: targeted distribution of the existing launch materi
 ## Analytics activation — 2026-10-03
 
 User-owned dashboard: https://jiaozenghao.goatcounter.com/ (private; authenticated access required). Demo visit estimates are active. [Deployment succeeded](https://github.com/JiaoZenghao/csv-delta/actions/runs/37123617618), and dashboard showed /csv-delta with 1 visit after real-browser verification on 2026-10-03. This initial verification traffic is not organic acquisition. Dashboard remains private; eight-hour sessions are enabled. Account email verification is still requested by the service. Include this dashboard in weekly follow-ups when access is available; otherwise record unavailable, never zero. Initial verification visits are test traffic and do not represent acquired users.
+
+## 2026-10-07 distribution experiment
+
+Baseline before distribution: GitHub public REST API reported 0 stars. Topics already include csv, csv-diff, data-comparison, developer-tools, javascript, local-first and offline; no topic changes needed.
+
+GoatCounter authenticated dashboard is accessible again. Date range 2026-09-30 through 2026-10-07, timezone Asia/Singapore (UTC+8): 3 visits shown for /csv-delta. These estimates may include maintainer/verification traffic; organic visits and confirmed trials remain unknown. This baseline was read before today's demo check. Email verification is still requested.
+
+User authorized the proposed distribution experiment. Reddit accepted the submission and assigned https://www.reddit.com/r/SideProject/comments/1wzmklh/i_built_a_local_csv_diff_for_price_tables_match/ . The detail page then displayed “Sorry, this post was removed by Reddit’s filters.” Treat this as filtered, not successful public distribution. No repeated submission or filter bypass attempted. Moderator review is the next step for this channel.
+
+V2EX login completed by the user, but the account requires invitation activation before using site features. Chinese publication is blocked until activation; no paid activation or token purchase attempted.
+
+Public demo verified: 1 added / 1 removed / 2 changed / 2 unchanged, including 79→74 and 89→94. Captured public screenshots are in artifacts/launch-2026-10-07. The 20-second MP4 is a screenshot walkthrough, not continuous screen recording. Report download verification timed out and is unverified in this run.
+
+Next checkpoints: 2026-10-08 and 2026-10-10 at approximately 11:45 Asia/Shanghai, then experiment review on 2026-10-21. Record filter/review status, available visit estimates, confirmed trials, concrete feedback and stars; unknown metrics remain unknown. Target: first 10 genuine stars, an experiment goal rather than a forecast.
+
+## Searchable tutorial experiment 2026-10-07
+
+Implemented bilingual public tutorials at /guides/compare-csv.html and /guides/compare-csv.zh-CN.html, with three downloadable synthetic scenarios: prices, database exports and configuration updates. README links and demo footer expose the tutorial. Each scenario documents keys, ignored and numeric columns, absolute tolerance and expected results. Automated checks verify counts and actual changed fields against the comparison engine.
+
+Tutorial pages have language alternates, canonical URLs, descriptive metadata and separate fixed-path visit estimates through the existing opt-in analytics deployment. No CSV values, query strings or fragments enter analytics. Indexing and acquired visitors are not yet established.
+
+Validation: 50 tests passed; analytics-enabled production build passed; bilingual page rendering, language switch, scenario anchor and 390px mobile layout checked. No horizontal overflow or broken images observed in the mobile tutorial check.
+
+Publication channel: the existing project GitHub Pages website. No new community posts were sent for this tutorial experiment. Review tutorial visits, repository traffic when accessible, concrete feedback and star change on 2026-10-21. Use visit estimates rather than person-level conversion rates.

@@ -1,0 +1,5 @@
+id,name,status,balance,exported_at
+001,Ada,active,10.00,2026-10-01
+002,Bo,pending,0,2026-10-01
+003,Chen,active,25,2026-10-01
+004,Dee,active,7,2026-10-01

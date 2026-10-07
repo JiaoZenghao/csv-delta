@@ -1,0 +1,124 @@
+[
+  {
+    "id": "prices",
+    "before": "examples/before.csv",
+    "after": "examples/after.csv",
+    "settings": {
+      "keys": [
+        "sku",
+        "region"
+      ],
+      "ignore": [
+        "updated_at"
+      ],
+      "numeric": [
+        "price"
+      ],
+      "tolerance": 0
+    },
+    "counts": {
+      "added": 1,
+      "removed": 1,
+      "changed": 2,
+      "unchanged": 2
+    },
+    "changes": [
+      {
+        "key": [
+          "P-001",
+          "US"
+        ],
+        "column": "price",
+        "old": "79.00",
+        "new": "74.00"
+      },
+      {
+        "key": [
+          "P-001",
+          "EU"
+        ],
+        "column": "price",
+        "old": "89.00",
+        "new": "94.00"
+      }
+    ]
+  },
+  {
+    "id": "migration",
+    "before": "examples/migration/before.csv",
+    "after": "examples/migration/after.csv",
+    "settings": {
+      "keys": [
+        "id"
+      ],
+      "ignore": [
+        "exported_at"
+      ],
+      "numeric": [
+        "balance"
+      ],
+      "tolerance": 0
+    },
+    "counts": {
+      "added": 1,
+      "removed": 1,
+      "changed": 1,
+      "unchanged": 2
+    },
+    "changes": [
+      {
+        "key": [
+          "002"
+        ],
+        "column": "status",
+        "old": "pending",
+        "new": "active"
+      }
+    ]
+  },
+  {
+    "id": "configuration",
+    "before": "examples/configuration/before.csv",
+    "after": "examples/configuration/after.csv",
+    "settings": {
+      "keys": [
+        "service",
+        "environment"
+      ],
+      "ignore": [
+        "updated_at"
+      ],
+      "numeric": [
+        "timeout_seconds",
+        "retries"
+      ],
+      "tolerance": 0
+    },
+    "counts": {
+      "added": 1,
+      "removed": 1,
+      "changed": 2,
+      "unchanged": 1
+    },
+    "changes": [
+      {
+        "key": [
+          "api",
+          "production"
+        ],
+        "column": "timeout_seconds",
+        "old": "30",
+        "new": "45"
+      },
+      {
+        "key": [
+          "api",
+          "staging"
+        ],
+        "column": "enabled",
+        "old": "true",
+        "new": "false"
+      }
+    ]
+  }
+]

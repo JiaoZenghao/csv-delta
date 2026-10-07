@@ -13,3 +13,5 @@ GoatCounter normally counts repeat visits to a path once per eight-hour session.
 Weekly follow-up: record available visits, sources and Star change in docs/growth.md; distinguish repository visitors (GitHub traffic) from demo visits. Missing access is unavailable, never zero. Preserve start date and exclude development/verification visits when interpreting early small samples.
 
 Official references: https://www.goatcounter.com/help/pixel and https://www.goatcounter.com/help/sessions
+
+Tutorial pages added on 2026-10-07 use fixed paths /csv-delta/guides/compare-csv.html and /csv-delta/guides/compare-csv.zh-CN.html with the same opt-out and origin-only referrer rules. Deployment enables their tracking alongside the demo; ordinary local builds remain disabled. Tutorial visit estimates are separate from tool visits and cannot identify individual conversions.

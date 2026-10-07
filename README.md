@@ -8,6 +8,16 @@ No account. No backend. Your files stay in your browser. No runtime dependencies
 
 ![CSV Delta example workspace](docs/images/price-review.svg)
 
+## Start with your use case
+
+[Read the tutorial: compare CSV files, ignoring row order and timestamps](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.html)
+
+- [Review price tables](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.html#prices): SKU + region, price changes and missing products.
+- [Check database exports](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.html#migration): preserve IDs, ignore export timestamps and find status changes.
+- [Review configuration updates](https://jiaozenghao.github.io/csv-delta/guides/compare-csv.html#configuration): service + environment, timeouts and flags.
+
+Each case includes downloadable before/after CSVs, settings and expected results.
+
 ## A price-table check in 30 seconds
 
 1. Click **Try the price-table example**, or choose your before and after UTF-8 CSV files.

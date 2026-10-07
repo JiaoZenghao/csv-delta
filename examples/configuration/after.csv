@@ -1,0 +1,5 @@
+environment,service,timeout_seconds,retries,enabled,updated_at
+production,worker,60.0,5,true,2026-10-07
+staging,api,30,3,false,2026-10-07
+production,api,45,3,true,2026-10-07
+production,scheduler,15,2,true,2026-10-07

@@ -12,3 +12,13 @@ test('local, unrelated, opted-out and invalid endpoints never send visits',()=>{
  for(const endpoint of ['', 'http://csv-example.goatcounter.com','https://evil.test','https://a.goatcounter.com/private']) assert.equal(visitURL(endpoint,'https://jiaozenghao.github.io/csv-delta/','',{}),null);
  for(const privacy of [{doNotTrack:'1'},{globalPrivacyControl:true}]) assert.equal(visitURL('https://a.goatcounter.com','https://jiaozenghao.github.io/csv-delta/','',privacy),null);
 });
+test('tutorial visits use fixed paths and omit queries, fragments and private referrer paths',()=>{
+ for(const path of ['/csv-delta/guides/compare-csv.html','/csv-delta/guides/compare-csv.zh-CN.html']) {
+  const url=new URL(visitURL('https://a.goatcounter.com',`https://jiaozenghao.github.io${path}?secret=x#private`,'https://example.com/private?q=secret',{}));
+  assert.equal(url.searchParams.get('p'),path);
+  assert.equal(url.searchParams.get('r'),'https://example.com');
+  assert.ok(!url.href.includes('secret'));
+  for(const privacy of [{doNotTrack:'1'},{globalPrivacyControl:true}]) assert.equal(visitURL('https://a.goatcounter.com',`https://jiaozenghao.github.io${path}`,'',privacy),null);
+ }
+ assert.equal(visitURL('https://a.goatcounter.com','https://jiaozenghao.github.io/csv-delta/guides/private.html','',{}),null);
+});
