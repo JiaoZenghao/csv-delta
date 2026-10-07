@@ -52,3 +52,31 @@ Start with a short real example and one relevant community where the maintainer 
 源码：https://github.com/JiaoZenghao/csv-delta
 
 配图：docs/images/price-review.svg。实验记录：docs/price-review-experiment.md。
+
+## First distribution round 2026-10-07
+
+Reddit submission: https://www.reddit.com/r/SideProject/comments/1wzmklh/i_built_a_local_csv_diff_for_price_tables_match/
+Status: submitted, then removed by Reddit filters. Do not repost to evade the filter.
+
+### 中文待发布
+
+标题：做了一个本地 CSV 比较工具：按 SKU＋地区找改价，导出离线报告
+
+两份价格 CSV 换了行顺序，用文本 diff 核对时，真正的价格变化很容易被淹没。
+
+我做了 CSV Delta，按 SKU＋地区匹配记录。在线示例展示 79→74、89→94，以及新增和移除商品；还可以忽略更新时间、按数值比较指定列，导出可离线打开的 HTML 报告。文件只在浏览器处理，无需账号，不上传文件。
+
+目前仅支持 UTF-8 CSV，每份最多 10 MiB、50,000 行；数值比较使用浮点数，不适合精确十进制财务核算。
+
+体验：https://jiaozenghao.github.io/csv-delta/
+源码：https://github.com/JiaoZenghao/csv-delta
+
+如果你近期核对过价格表或导出数据，它能否替代你工作中的一步？欢迎用模拟或脱敏数据反馈。如果帮你节省了时间，也欢迎在 GitHub 收藏。
+
+V2EX account currently requires invitation activation. Check the creation node posting instructions after activation.
+
+### Moderator review draft
+
+Hello, my CSV Delta feedback post was removed by Reddit’s filters: https://www.reddit.com/r/SideProject/comments/1wzmklh/ . I am the project author. It is a free, open-source browser tool, and I am asking for feedback on the CSV comparison workflow. Could you review whether it is appropriate for r/SideProject? I am happy to adjust it to the community rules. Thank you.
+
+This moderator message is prepared, not sent.
